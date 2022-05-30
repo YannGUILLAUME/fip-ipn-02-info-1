@@ -53,6 +53,4 @@ Requin = Requin("Moha", Classification.POISSON)
 print(Requin.name)
 
 
-#je suis la
-
 
