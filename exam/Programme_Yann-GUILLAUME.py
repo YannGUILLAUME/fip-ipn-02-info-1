@@ -98,6 +98,7 @@ cocktail = Borne(["1 :",the_boost.name,"2 :", the_detox.name,"3 :", the_fresh.na
 class commandes():
     _OrderNumber = 0
     _TotalPrice = 0
+    _listecommande = ""
 
     def __init__(self, OrderNumber, TotalPrice):
         self._OrderNumber =  OrderNumber
@@ -117,6 +118,14 @@ class commandes():
     @orderNumber.setter
     def orderNumber(self, _OrderNumber):
         self._OrderNumber = _OrderNumber
+
+    @property
+    def listecom(self):
+        return self._listecommande
+
+    @listecom.setter
+    def listecom(self, _listecommande):
+        self._listecommande = _listecommande
 
 commande = commandes(0,0)
 
@@ -194,10 +203,22 @@ while nouvelle != 1:
         ordernumber = 0
         
         commande.totalPrice = commande.totalPrice + (cocktail._selectedCocktail.price * cocktail._numberofCocktails)
+        commande.listecom = commande.listecom + str(cocktail._numberofCocktails) + " " + cocktail._selectedCocktail.name +" pour " + str(cocktail._selectedCocktail.price) +"$\n"
 
         encore = input("\nSouhaitez-vous autre chose ? (oui ou non) : ")
-    
+
+    print("Récapitulatif : \n",commande._listecommande)
     print("\nCommande numéro :", commande.orderNumber, "Validée, \nCoût Totale : ",commande.totalPrice)
+
+    paiement = 9999
+    while paiement != commande.totalPrice or paiement == 0:
+        paiement = float(input("Indiquez la somme que vous souhaitez régler ou 0 pour annuler :"))
+
+    if paiement == commande.totalPrice:
+        print("Merci d'avoir commander dans notre établissment ! A bientot")
+    if paiement == commande.totalPrice:
+        print("Paiement annulé")
+    
     nouvelle = int(input("\nreommencer ? taper nimporte quel chiffre sauf 1 : "))
     commande._OrderNumber = commande._OrderNumber + 1
 
