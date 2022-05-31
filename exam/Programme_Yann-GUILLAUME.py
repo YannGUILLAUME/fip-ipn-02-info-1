@@ -220,7 +220,7 @@ while nouvelle != 1:
 
     if paiement == commande.totalPrice:
         print("Merci d'avoir commander dans notre établissment ! A bientot")
-    if paiement == commande.totalPrice:
+    if paiement == 0:
         print("Paiement annulé")
     
     nouvelle = int(input("\nreommencer ? taper nimporte quel chiffre sauf 1 : "))
