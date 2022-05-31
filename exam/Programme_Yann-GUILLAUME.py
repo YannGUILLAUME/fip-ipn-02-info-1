@@ -154,7 +154,11 @@ while nouvelle != 1:
         # Ecran d'acceuil
 
         print("Voici la liste des cocktails : \n")
-        print(cocktail._listCocktail,"\n")
+        print("1 - ",the_boost.name," :",the_boost._ingredients," prix :",the_boost.price,"$")
+        print("2 - ",the_detox.name," :",the_detox._ingredients," prix :",the_detox.price,"$")
+        print("3 - ",the_fresh.name," :",the_fresh._ingredients," prix :",the_fresh.price,"$")
+        print("4 - ",the_fusion.name," :",the_fusion._ingredients," prix :",the_fusion.price,"$")
+        #print(cocktail._listCocktail,"\n")
 
         # Choisir un cocktail
 
